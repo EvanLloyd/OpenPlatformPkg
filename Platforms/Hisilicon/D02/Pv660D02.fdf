@@ -167,13 +167,10 @@ READ_LOCK_STATUS   = TRUE
   #INF HwProductsPkg/Pv660Evb/OemNicConfigEvb/OemNicConfigEvb.inf
 
   # PCI Express
-  #INF OpenPlatformPkg/Chips/Hisilicon/Override/UefiCpuPkg/CpuIo2Dxe/CpuIo2Dxe.inf
-  INF OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/CpuIo2Dxe/CpuIo2Dxe.inf
-  #INF OpenPlatformPkg/Chips/Hisilicon/Drivers/PcieInitDxe/PcieInitDxe.inf
-  INF OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/PcieInitDxe/PcieInitDxe.inf
-  # Right now only PCI enumeration is not needed
-  #INF OpenPlatformPkg/Chips/Hisilicon/Binary/Drivers/PciHostBridge/PciHostBridge.inf
-  #INF MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe.inf 
+  INF OpenPlatformPkg/Chips/Hisilicon/Drivers/CpuIo2Dxe/CpuIo2Dxe.inf
+  INF OpenPlatformPkg/Chips/Hisilicon/Pv660/Drivers/PcieInitDxe/PcieInitDxe.inf
+  INF OpenPlatformPkg/Chips/Hisilicon/Pv660/Drivers/PciHostBridgeDxe/PciHostBridgeDxe.inf
+  INF MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe.inf 
 
 
   INF OpenPlatformPkg/Chips/Hisilicon/Drivers/FlashFvbDxe/FlashFvbDxe.inf

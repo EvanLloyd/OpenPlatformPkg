@@ -302,6 +302,41 @@
   ## TODO: need to confirm the base for Performance and Metronome base for PV660
   gArmPlatformTokenSpaceGuid.PcdSP804TimerPerformanceBase|0x80060000
   gArmPlatformTokenSpaceGuid.PcdSP804TimerMetronomeBase|0x80060000
+  
+  gHwTokenSpaceGuid.PcdPcieRootBridgeMask|0x6 # bit0:HB0RB0,bit1:HB0RB1,bit2:HB0RB2,bit3:HB0RB3,bit4:HB1RB0,bit5:HB1RB1,bit6:HB1RB2,bit7:HB1RB3^M
+  gHwTokenSpaceGuid.PcdHb1BaseAddress|0x400000000000 # 4T
+
+  gHwTokenSpaceGuid.PcdHb0Rb0PciConfigurationSpaceBaseAddress|0x30000000000
+  gHwTokenSpaceGuid.PcdHb0Rb0PciConfigurationSpaceSize|0x10000000000
+  
+  gHwTokenSpaceGuid.PcdHb0Rb1PciConfigurationSpaceBaseAddress|0x22000000000
+  gHwTokenSpaceGuid.PcdHb0Rb1PciConfigurationSpaceSize|0x10000000
+  
+  gHwTokenSpaceGuid.PcdHb0Rb2PciConfigurationSpaceBaseAddress|0x24000000000
+  gHwTokenSpaceGuid.PcdHb0Rb2PciConfigurationSpaceSize|0x10000000
+  
+  gHwTokenSpaceGuid.PcdHb0Rb3PciConfigurationSpaceBaseAddress|0x26000000000
+  gHwTokenSpaceGuid.PcdHb0Rb3PciConfigurationSpaceSize|0x10000000
+
+  gHwTokenSpaceGuid.PcdHb0Rb1PciRegionBaseAddress|0xb0000000
+  gHwTokenSpaceGuid.PcdHb0Rb1PciRegionSize|0x7feffff #pci域的长度 128M - 64K, 64k给io用
+
+  gHwTokenSpaceGuid.PcdHb0Rb2PciRegionBaseAddress|0xc0000000
+  gHwTokenSpaceGuid.PcdHb0Rb2PciRegionSize|0x3feffff #pci域的长度 64M - 64K, 64k给io用
+
+  gHwTokenSpaceGuid.PcdHb0Rb1CpuMemRegionBase|0x22008000000
+  #gHwTokenSpaceGuid.PcdHb0Rb1CpuMemRegionBaseAddress|0x22008000000
+  gHwTokenSpaceGuid.PcdHb0Rb2CpuMemRegionBase|0x2400c000000
+  #gHwTokenSpaceGuid.PcdHb0Rb2CpuMemRegionBaseAddress|0x2400c000000
+
+  gHwTokenSpaceGuid.PcdHb0Rb1CpuIoRegionBase|0x2200fff0000
+  gHwTokenSpaceGuid.PcdHb0Rb2CpuIoRegionBase|0x2400fff0000
+  
+  gHwTokenSpaceGuid.PcdHb0Rb1IoBase|0 
+  gHwTokenSpaceGuid.PcdHb0Rb1IoSize|0xffff #64K
+
+  gHwTokenSpaceGuid.PcdHb0Rb2IoBase|0 
+  gHwTokenSpaceGuid.PcdHb0Rb2IoSize|0xffff #64K
 
 ################################################################################
 #
@@ -431,12 +466,9 @@
   OpenPlatformPkg/Chips/Hisilicon/Drivers/AcpiPlatformDxe/AcpiPlatformDxe.inf
 
   #Pci Express
-  #OpenPlatformPkg/Chips/Hisilicon/Override/UefiCpuPkg/CpuIo2Dxe/CpuIo2Dxe.inf
-  #OpenPlatformPkg/Chips/Hisilicon/Drivers/PcieInitDxe/PcieInitDxe.inf
-  #OpenPlatformPkg/Chips/Hisilicon/Drivers/PciHostBridge/PciHostBridge.inf
-  OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/CpuIo2Dxe/CpuIo2Dxe.inf
-  OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/PcieInitDxe/PcieInitDxe.inf
-  OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/PciHostBridge/PciHostBridge.inf
+  OpenPlatformPkg/Chips/Hisilicon/Drivers/CpuIo2Dxe/CpuIo2Dxe.inf
+  OpenPlatformPkg/Chips/Hisilicon/Pv660/Drivers/PcieInitDxe/PcieInitDxe.inf
+  OpenPlatformPkg/Chips/Hisilicon/Pv660/Drivers/PciHostBridgeDxe/PciHostBridgeDxe.inf
   MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe.inf 
 
   #

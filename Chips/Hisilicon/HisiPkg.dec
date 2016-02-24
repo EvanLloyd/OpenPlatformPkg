@@ -15,7 +15,7 @@
 
 [Defines]
   DEC_SPECIFICATION              = 0x00010005
-  PACKAGE_NAME                   = HisiPkg 
+  PACKAGE_NAME                   = HisiPkg
   PACKAGE_GUID                   = c6013a10-758c-4c0d-bd07-e601e6721f86
   PACKAGE_VERSION                = 0.1
 
@@ -42,7 +42,7 @@
 
 
   gRamDiskGuid = {0x6ED4DD0, 0xFF78, 0x11d3, {0xbd, 0xc4, 0x00, 0xa0, 0xc9, 0x40, 0x53, 0xd1}}
-  gEfiMemoryMapGuid  = { 0xf8870015, 0x6994, 0x4b98, { 0x95, 0xa2, 0xbd, 0x56, 0xda, 0x91, 0xc0, 0x7f }} 
+  gEfiMemoryMapGuid  = { 0xf8870015, 0x6994, 0x4b98, { 0x95, 0xa2, 0xbd, 0x56, 0xda, 0x91, 0xc0, 0x7f }}
 
 [LibraryClasses]
   I2CLib|HwPkg\Include\Library\I2CLib.h
@@ -66,19 +66,23 @@
   gHwTokenSpaceGuid.PcdUartClkInHz|24000000|UINT32|0x0100001F
   gHwTokenSpaceGuid.PcdSerialRegisterSpaceSize|0x10000|UINT64|0x01000019
 
+  gHwTokenSpaceGuid.PcdDsaSmmuBaseAddress|0|UINT64|0x00000047
+  gHwTokenSpaceGuid.PcdPcieSmmuBaseAddress|0|UINT64|0x00000046
+  gHwTokenSpaceGuid.PcdAlgSmmuBaseAddress|0|UINT64|0x00000048
+  gHwTokenSpaceGuid.PcdM3SmmuBaseAddress|0|UINT64|0x00000049
   gHwTokenSpaceGuid.PcdL1BiosBaseAddress|0x90000000|UINT64|0x02000012
   gHwTokenSpaceGuid.PcdL2BiosBaseAddress|0x90200000|UINT64|0x02000013
 
- 
+
   gHwTokenSpaceGuid.PcdSysControlBaseAddress|0|UINT64|0x01000023
   gHwTokenSpaceGuid.PcdCpldBaseAddress|0|UINT64|0x01000024
   gHwTokenSpaceGuid.PcdMailBoxAddress|0|UINT64|0x01000025
 
-  gHwTokenSpaceGuid.PcdSFCCFGBaseAddress|0|UINT64|0x01000037     
-  gHwTokenSpaceGuid.PcdSFCMEM0BaseAddress|0|UINT64|0x01000038     
+  gHwTokenSpaceGuid.PcdSFCCFGBaseAddress|0|UINT64|0x01000037
+  gHwTokenSpaceGuid.PcdSFCMEM0BaseAddress|0|UINT64|0x01000038
 
- 
-  gHwTokenSpaceGuid.PcdPmBusBaseAddress|0x403A0000|UINT32|0x01000039      
+
+  gHwTokenSpaceGuid.PcdPmBusBaseAddress|0x403A0000|UINT32|0x01000039
 
 
   gHwTokenSpaceGuid.PcdRamDiskMaxSize|0|UINT32|0x01000040
@@ -87,8 +91,8 @@
   gHwTokenSpaceGuid.PcdPeriSubctrlAddress|0|UINT64|0x01000041
 
   gHwTokenSpaceGuid.PcdMdioSubctrlAddress|0|UINT64|0x01000042
-  
-  
+
+
   gHwTokenSpaceGuid.PcdDdrExamStartAdd|0|UINT32|0x03000050
   gHwTokenSpaceGuid.PcdDdrExamLenth|0x100000|UINT32|0x03000051
 
@@ -96,7 +100,7 @@
   gHwTokenSpaceGuid.PcdSystemProductName|L""|VOID*|0x30000053
   gHwTokenSpaceGuid.PcdSystemVersion|L""|VOID*|0x30000054
   gHwTokenSpaceGuid.PcdBaseBoardProductName|L""|VOID*|0x30000055
-  gHwTokenSpaceGuid.PcdBaseBoardVersion|L""|VOID*|0x30000056  
+  gHwTokenSpaceGuid.PcdBaseBoardVersion|L""|VOID*|0x30000056
   gHwTokenSpaceGuid.PcdCPUInfo|L""|VOID*|0x30000060
   ## Null-terminated Unicode string that describes the firmware version.
   # @Prompt Firmware version string.
@@ -107,9 +111,9 @@
 
   gHwTokenSpaceGuid.PcdTopOfLowMemory|0x0|UINT32|0x40000002
   gHwTokenSpaceGuid.PcdBottomOfHighMemory|0x0|UINT64|0x40000003
-  
+
   gHwTokenSpaceGuid.PcdSlotPerChannelNum|0x0|UINT32|0x40000004
-  
+
   #FDT File Address
   gHwTokenSpaceGuid.FdtFileAddress|0x0|UINT64|0x40000005
 
@@ -134,11 +138,57 @@
   # But in our driver code we still need this, so move it to HwPkg
   gHwTokenSpaceGuid.PcdGicPrimaryCoreId|0|UINT32|0x00000043
 
-  gHwTokenSpaceGuid.PcdM3SmmuBaseAddress|0|UINT64|0x00000045
-  gHwTokenSpaceGuid.PcdPcieSmmuBaseAddress|0|UINT64|0x00000046
-  gHwTokenSpaceGuid.PcdDsaSmmuBaseAddress|0|UINT64|0x00000047
-  gHwTokenSpaceGuid.PcdAlgSmmuBaseAddress|0|UINT64|0x00000048
+  gHwTokenSpaceGuid.PcdPcieRootBridgeMask|0|UINT32|0x00000044
+  gHwTokenSpaceGuid.PcdPcieRootBridgeMask2P|0|UINT32|0x00000045
 
+  gHwTokenSpaceGuid.PcdBoardType|0|UINT8|0x0000004b
+  gHwTokenSpaceGuid.PcdHb1BaseAddress|0x400000000000|UINT64|0x00000051   # 4T
+  gHwTokenSpaceGuid.PcdHb0Rb1PciConfigurationSpaceBaseAddress|0|UINT64|0x00000052
+  gHwTokenSpaceGuid.PcdHb0Rb1PciConfigurationSpaceSize|0|UINT64|0x00000053
+  gHwTokenSpaceGuid.PcdHb0Rb0PciConfigurationSpaceBaseAddress|0|UINT64|0x00000054
+  gHwTokenSpaceGuid.PcdHb0Rb0PciConfigurationSpaceSize|0|UINT64|0x00000055
+  gHwTokenSpaceGuid.PcdHb0Rb2PciConfigurationSpaceBaseAddress|0|UINT64|0x00000056
+  gHwTokenSpaceGuid.PcdHb0Rb2PciConfigurationSpaceSize|0|UINT64|0x00000057
+  gHwTokenSpaceGuid.PcdHb0Rb3PciConfigurationSpaceBaseAddress|0|UINT64|0x00000058
+  gHwTokenSpaceGuid.PcdHb0Rb3PciConfigurationSpaceSize|0|UINT64|0x00000059
+
+  gHwTokenSpaceGuid.PciHb0Rb0Base|0|UINT64|0x0000005a
+  gHwTokenSpaceGuid.PciHb0Rb1Base|0|UINT64|0x0000005b
+  gHwTokenSpaceGuid.PciHb0Rb2Base|0|UINT64|0x0000005c
+  gHwTokenSpaceGuid.PciHb0Rb3Base|0|UINT64|0x0000005d
+  gHwTokenSpaceGuid.PcdHb0Rb0PciRegionBaseAddress|0|UINT64|0x8000005a
+  gHwTokenSpaceGuid.PcdHb0Rb1PciRegionBaseAddress|0|UINT64|0x8000005b
+  gHwTokenSpaceGuid.PcdHb0Rb2PciRegionBaseAddress|0|UINT64|0x8000005c
+  gHwTokenSpaceGuid.PcdHb0Rb3PciRegionBaseAddress|0|UINT64|0x8000005d
+
+  gHwTokenSpaceGuid.PcdHb0Rb0PciRegionSize|0|UINT64|0x6000005a
+  gHwTokenSpaceGuid.PcdHb0Rb1PciRegionSize|0|UINT64|0x6000005b
+  gHwTokenSpaceGuid.PcdHb0Rb2PciRegionSize|0|UINT64|0x6000005c
+  gHwTokenSpaceGuid.PcdHb0Rb3PciRegionSize|0|UINT64|0x6000005d
+
+  gHwTokenSpaceGuid.PcdHb0Rb0CpuMemRegionBase|0|UINT64|0x7000005a
+  gHwTokenSpaceGuid.PcdHb0Rb1CpuMemRegionBase|0|UINT64|0x7000005b
+  gHwTokenSpaceGuid.PcdHb0Rb2CpuMemRegionBase|0|UINT64|0x7000005c
+  gHwTokenSpaceGuid.PcdHb0Rb3CpuMemRegionBase|0|UINT64|0x7000005d
+
+  gHwTokenSpaceGuid.PcdHb0Rb0CpuIoRegionBase|0|UINT64|0x3000005a
+  gHwTokenSpaceGuid.PcdHb0Rb1CpuIoRegionBase|0|UINT64|0x3000005b
+  gHwTokenSpaceGuid.PcdHb0Rb2CpuIoRegionBase|0|UINT64|0x3000005c
+  gHwTokenSpaceGuid.PcdHb0Rb3CpuIoRegionBase|0|UINT64|0x3000005d
+
+  gHwTokenSpaceGuid.PcdHb0Rb0IoBase|0|UINT64|0x9000005a
+  gHwTokenSpaceGuid.PcdHb0Rb1IoBase|0|UINT64|0x9000005b
+  gHwTokenSpaceGuid.PcdHb0Rb2IoBase|0|UINT64|0x9000005c
+  gHwTokenSpaceGuid.PcdHb0Rb3IoBase|0|UINT64|0x9000005d
+
+  gHwTokenSpaceGuid.PcdHb0Rb0IoSize|0|UINT64|0x2000005a
+  gHwTokenSpaceGuid.PcdHb0Rb1IoSize|0|UINT64|0x2000005b
+  gHwTokenSpaceGuid.PcdHb0Rb2IoSize|0|UINT64|0x2000005c
+  gHwTokenSpaceGuid.PcdHb0Rb3IoSize|0|UINT64|0x2000005d
+
+  gHwTokenSpaceGuid.Pcdsoctype|0|UINT32|0x00000061
+  gHwTokenSpaceGuid.PcdSasCtrlId|0|UINT32|0x40000055
+  gHwTokenSpaceGuid.PcdSerDesFlowCtrlFlag|0|UINT32|0x40000056
 [PcdsFeatureFlag]
 
 

@@ -27,6 +27,7 @@ DefinitionBlock("DsdtTable.aml", "DSDT", 1, "HISI", "HISI-D02", EFI_ACPI_ARM_OEM
   include ("Ctl.asl")
   include ("Sata.asl")
   include ("Hns.asl")
+  include ("Pci.asl")
   Scope(_SB) {
    
     

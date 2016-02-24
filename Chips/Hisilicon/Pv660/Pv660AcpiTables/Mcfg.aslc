@@ -19,35 +19,59 @@
 #pragma pack(1)
 typedef struct
 {
-   EFI_ACPI_DESCRIPTION_HEADER Header;
-   UINT64 Reserved1;
    UINT64 ullBaseAddress;
    UINT16 usSegGroupNum;
    UINT8  ucStartBusNum;
    UINT8  ucEndBusNum;
    UINT32 Reserved2;
+}EFI_ACPI_5_0_MCFG_CONFIG_STRUCTURE;
+
+typedef struct
+{
+   EFI_ACPI_DESCRIPTION_HEADER Header;
+   UINT64 Reserved1;
+}EFI_ACPI_5_0_MCFG_TABLE_CONFIG;
+
+typedef struct
+{
+   EFI_ACPI_5_0_MCFG_TABLE_CONFIG Acpi_Table_Mcfg;
+   EFI_ACPI_5_0_MCFG_CONFIG_STRUCTURE Config_Structure[2];
 }EFI_ACPI_5_0_PCI_EXPRESS_MEMORY_MAPPED_CONFIGURATION_SPACE_TABLE;
 #pragma pack()
 
 EFI_ACPI_5_0_PCI_EXPRESS_MEMORY_MAPPED_CONFIGURATION_SPACE_TABLE Mcfg=
 {
   {
-      EFI_ACPI_5_0_PCI_EXPRESS_MEMORY_MAPPED_CONFIGURATION_SPACE_BASE_ADDRESS_DESCRIPTION_TABLE_SIGNATURE,
-      sizeof (EFI_ACPI_5_0_PCI_EXPRESS_MEMORY_MAPPED_CONFIGURATION_SPACE_TABLE),
-      ACPI_5_0_MCFG_VERSION,
-      0x00,                                                     // Checksum will be updated at runtime
-      {EFI_ACPI_ARM_OEM_ID},
-      EFI_ACPI_ARM_OEM_TABLE_ID,
-      EFI_ACPI_ARM_OEM_REVISION,
-      EFI_ACPI_ARM_CREATOR_ID,
-      EFI_ACPI_ARM_CREATOR_REVISION
-    },
-    0x0000000000000000,                                 //Reserved
-    0x0000000000000000,                                 //Base Address
-    0x0000,                                             //Segment Group Number
-    0x00,                                               //Start Bus Number
-    0x00,                                               //End Bus Number
-    0x00000000,                                         //Reserved
+		  {
+			  EFI_ACPI_5_0_PCI_EXPRESS_MEMORY_MAPPED_CONFIGURATION_SPACE_BASE_ADDRESS_DESCRIPTION_TABLE_SIGNATURE,
+			  sizeof (EFI_ACPI_5_0_PCI_EXPRESS_MEMORY_MAPPED_CONFIGURATION_SPACE_TABLE),
+			  ACPI_5_0_MCFG_VERSION,
+			  0x00,                                                     // Checksum will be updated at runtime
+			  {EFI_ACPI_ARM_OEM_ID},
+			  EFI_ACPI_ARM_OEM_TABLE_ID,
+			  EFI_ACPI_ARM_OEM_REVISION,
+			  EFI_ACPI_ARM_CREATOR_ID,
+			  EFI_ACPI_ARM_CREATOR_REVISION
+			},
+			0x0000000000000000,                                 //Reserved
+	},
+	{
+		
+		{
+			0x0000022000000000,                                 //Base Address
+			0x0001,                                             //Segment Group Number
+			0x40,                                               //Start Bus Number
+			0x7f,                                               //End Bus Number
+			0x00000000,                                         //Reserved
+		},
+		{
+			0x0000024000000000,                                 //Base Address
+			0x0002,                                             //Segment Group Number
+			0x80,                                               //Start Bus Number
+			0xbf,                                               //End Bus Number
+			0x00000000,                                         //Reserved
+		},
+	}
 };
 
 //
