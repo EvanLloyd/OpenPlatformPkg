@@ -380,7 +380,7 @@ SmmuSetAsidEntry (
 */
 
 EFI_STATUS
-SmmuConfigForOS (
+SmmuConfigSwitch (
   SMMU_DEVICE       *Smmu
   )
 {

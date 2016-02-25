@@ -33,7 +33,7 @@ SpecialSmmuConfig (VOID)
   UINTN Index;
 
   for (Index = 0; Index < sizeof (mSpecialSmmu) / sizeof (mSpecialSmmu[0]); Index++) {
-    (VOID) SmmuConfigForOS (&mSpecialSmmu[Index]);
+    (VOID) SmmuConfigSwitch (&mSpecialSmmu[Index]);
   }
 }
 
@@ -54,7 +54,7 @@ ExitBootServicesEventSmmu (
   IN VOID       *Context
   )
 {
-  SmmuConfigForLinux ();
+  SmmuConfigForOS ();
   SpecialSmmuEnable ();
   DEBUG((EFI_D_ERROR,"SMMU ExitBootServicesEvent\n"));
 }

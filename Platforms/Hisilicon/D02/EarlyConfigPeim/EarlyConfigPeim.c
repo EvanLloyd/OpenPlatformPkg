@@ -42,7 +42,7 @@ EarlyConfigEntry (
   )
 {
     DEBUG((EFI_D_ERROR,"SMMU CONFIG........."));
-    SmmuConfigForLinux();
+    SmmuConfigForOS();
     DEBUG((EFI_D_ERROR,"Done\n"));
 
     DEBUG((EFI_D_ERROR,"ITS CONFIG........."));

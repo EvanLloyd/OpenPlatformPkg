@@ -39,7 +39,7 @@ EslStartOsEntry (
     }
     DEBUG((EFI_D_ERROR, "[%a]:[%dL] Start to boot Linux\n", __FUNCTION__, __LINE__));
 
-    SmmuConfigForLinux();
+    SmmuConfigForOS();
 
     ITSCONFIG();
 
