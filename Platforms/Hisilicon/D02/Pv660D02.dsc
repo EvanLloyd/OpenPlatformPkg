@@ -52,6 +52,7 @@
   DpcLib|MdeModulePkg/Library/DxeDpcLib/DxeDpcLib.inf
   HiiLib|MdeModulePkg/Library/UefiHiiLib/UefiHiiLib.inf
   UefiHiiServicesLib|MdeModulePkg/Library/UefiHiiServicesLib/UefiHiiServicesLib.inf
+  UefiScsiLib|MdePkg/Library/UefiScsiLib/UefiScsiLib.inf
   UdpIoLib|MdeModulePkg/Library/DxeUdpIoLib/DxeUdpIoLib.inf
   IpIoLib|MdeModulePkg/Library/DxeIpIoLib/DxeIpIoLib.inf
 
@@ -216,6 +217,10 @@
   gHwTokenSpaceGuid.PcdBaseBoardVersion|L"LINARO"
   
   gHwTokenSpaceGuid.PcdSlotPerChannelNum|0x2
+
+  # Sas1
+  gHwTokenSpaceGuid.PcdSasBaseAddress|0xb1000000
+  gHwTokenSpaceGuid.PcdSasCtrlBaseAddress|0xb0000000
   
   #
   # ARM PL390 General Interrupt Controller
@@ -509,6 +514,10 @@
   MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
   MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
 
+  OpenPlatformPkg/Chips/Hisilicon/Pv660/Drivers/SasV1Dxe/SasV1Dxe.inf
+  MdeModulePkg/Bus/Scsi/ScsiBusDxe/ScsiBusDxe.inf
+  MdeModulePkg/Bus/Scsi/ScsiDiskDxe/ScsiDiskDxe.inf
+
   #OpenPlatformPkg/Chips/Hisilicon/Override/EmbeddedPkg/Ebl/Ebl.inf
   OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Ebl/Ebl.inf
   #c00213799 secure boot test
@@ -521,8 +530,8 @@
   #OpenPlatformPkg/Chips/Hisilicon/Network/OemFtp/OemFtp.inf
 
   #OpenPlatformPkg/Chips/Hisilicon/Drivers/AtaAtapiPassThru/AtaAtapiPassThru.inf
-  OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/AtaAtapiPassThru/AtaAtapiPassThru.inf
-  MdeModulePkg/Bus/Ata/AtaBusDxe/AtaBusDxe.inf
+  #OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/AtaAtapiPassThru/AtaAtapiPassThru.inf
+  #MdeModulePkg/Bus/Ata/AtaBusDxe/AtaBusDxe.inf
 
 
   #

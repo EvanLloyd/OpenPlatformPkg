@@ -189,6 +189,11 @@
   gHwTokenSpaceGuid.Pcdsoctype|0|UINT32|0x00000061
   gHwTokenSpaceGuid.PcdSasCtrlId|0|UINT32|0x40000055
   gHwTokenSpaceGuid.PcdSerDesFlowCtrlFlag|0|UINT32|0x40000056
+
+  # Sas Driver PCDs
+  gHwTokenSpaceGuid.PcdSasBaseAddress|0x0|UINT32|0x00000060
+  gHwTokenSpaceGuid.PcdSasCtrlBaseAddress|0x0|UINT32|0x00000063
+
 [PcdsFeatureFlag]
 
 
