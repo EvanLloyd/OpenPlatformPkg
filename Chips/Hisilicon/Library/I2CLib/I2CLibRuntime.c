@@ -76,7 +76,7 @@ I2cLibRuntimeSetup (UINT32 Socket, UINT8 Port)
       );
   if (EFI_ERROR (Status)) {
     DEBUG ((EFI_D_ERROR, "[%a:%d] AddMemorySpace failed: %r\n", __FUNCTION__, __LINE__, Status));
-    return Status;
+    //return Status;
   }
 
   Status = gDS->SetMemorySpaceAttributes (Base, SIZE_64KB, EFI_MEMORY_UC | EFI_MEMORY_RUNTIME);
