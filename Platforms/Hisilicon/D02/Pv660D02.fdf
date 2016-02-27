@@ -246,8 +246,7 @@ READ_LOCK_STATUS   = TRUE
   #
   #Network
   # 
-  #INF OpenPlatformPkg/Chips/Hisilicon/Drivers/Network/SnpPV600Dxe_PLAT/SnpPV600DxeMac4.inf
-  #INF OpenPlatformPkg/Chips/Hisilicon/Drivers/Network/SnpPV600Dxe_PLAT/SnpPV600DxeMac5.inf
+  INF OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/SnpPV600Dxe_PLAT/SnpPV600DxeMac4PhyInitOnly.inf
   INF OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/SnpPV600Dxe_PLAT/SnpPV600DxeMac5.inf
 
   INF MdeModulePkg/Universal/Network/ArpDxe/ArpDxe.inf

@@ -475,8 +475,7 @@
   #network
   #
  
-  #OpenPlatformPkg/Chips/Hisilicon/Drivers/Network/SnpPV600Dxe_PLAT/SnpPV600DxeMac4.inf
-  #OpenPlatformPkg/Chips/Hisilicon/Drivers/Network/SnpPV600Dxe_PLAT/SnpPV600DxeMac5.inf
+  OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/SnpPV600Dxe_PLAT/SnpPV600DxeMac4PhyInitOnly.inf
   OpenPlatformPkg/Platforms/Hisilicon/Binary/D02/Drivers/SnpPV600Dxe_PLAT/SnpPV600DxeMac5.inf
   
   MdeModulePkg/Universal/Network/ArpDxe/ArpDxe.inf
