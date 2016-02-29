@@ -69,8 +69,6 @@ Scope(_SB)
 			ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 			Package () {
 				Package () {"rc-dbi", Package () { 0x0, 0xb0080000, 0x0, 0x10000 }},
-				Package () {"subctrl", Package () { 0x0, 0xb0000000, 0x0, 0x10000 }},
-				Package () {"port-id", 1}
 			}
 		})
 
@@ -149,8 +147,6 @@ Scope(_SB)
 			ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
 			Package () {
 				Package () {"rc-dbi", Package () { 0x0, 0xb0090000, 0x0, 0x10000 }},
-				Package () {"subctrl", Package () { 0x0, 0xb0000000, 0x0, 0x10000 }},
-				Package () {"port-id", 2}
 			}
 		})
 		

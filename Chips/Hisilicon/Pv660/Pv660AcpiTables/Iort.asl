@@ -194,11 +194,11 @@
 [0002]                             Length : 0034
 [0001]                           Revision : 00
 [0004]                           Reserved : 00000000
-[0004]                      Mapping Count : 00000000
+[0004]                      Mapping Count : 00000001
 [0004]                     Mapping Offset : 00000020
 
 [0008]                  Memory Properties : [IORT Memory Access Properties]
-[0004]                    Cache Coherency : 00000000
+[0004]                    Cache Coherency : 00000001
 [0001]              Hints (decoded below) : 00
                                 Transient : 0
                            Write Allocate : 0
@@ -209,11 +209,11 @@
                                 Coherency : 0
                          Device Attribute : 0
 [0004]                      ATS Attribute : 00000000
-[0004]                 PCI Segment Number : 00000000
+[0004]                 PCI Segment Number : 00000001
 
-[0004]                         Input base : 00000000
-[0004]                           ID Count : 00000040
-[0004]                        Output Base : 00000000
+[0004]                         Input base : 00004000
+[0004]                           ID Count : 00004000
+[0004]                        Output Base : 00004000
 [0004]                   Output Reference : 0000007C
 [0004]              Flags (decoded below) : 00000000
                            Single Mapping : 0
@@ -223,11 +223,11 @@
 [0002]                             Length : 0034
 [0001]                           Revision : 00
 [0004]                           Reserved : 00000000
-[0004]                      Mapping Count : 00000000
+[0004]                      Mapping Count : 00000001
 [0004]                     Mapping Offset : 00000020
 
 [0008]                  Memory Properties : [IORT Memory Access Properties]
-[0004]                    Cache Coherency : 00000000
+[0004]                    Cache Coherency : 00000001
 [0001]              Hints (decoded below) : 00
                                 Transient : 0
                            Write Allocate : 0
@@ -238,11 +238,11 @@
                                 Coherency : 0
                          Device Attribute : 0
 [0004]                      ATS Attribute : 00000000
-[0004]                 PCI Segment Number : 00000000
+[0004]                 PCI Segment Number : 00000002
 
-[0004]                         Input base : 00000000
-[0004]                           ID Count : 00000040
-[0004]                        Output Base : 00000000
+[0004]                         Input base : 00008000
+[0004]                           ID Count : 00004000
+[0004]                        Output Base : 00008000
 [0004]                   Output Reference : 0000007C
 [0004]              Flags (decoded below) : 00000000
                            Single Mapping : 0
