@@ -238,7 +238,10 @@ struct hisi_sas_sge {
 	UINT32 page_ctrl_1;
 	UINT32 data_len;
 	UINT32 data_off;
-	UINT32 rsv[2];		// align to 16 bytes
+};
+
+struct hisi_sas_sge_page {
+	struct hisi_sas_sge sg[512];
 };
 
 struct hisi_sas_cmd {
@@ -262,7 +265,7 @@ enum phy_state {
 struct hisi_hba {
   struct hisi_sas_cmd_hdr	*cmd_hdr[QUEUE_CNT];
   struct hisi_sas_complete_hdr	*complete_hdr[QUEUE_CNT];
-  struct hisi_sas_sge	*sge[QUEUE_CNT];
+  struct hisi_sas_sge_page	*sge[QUEUE_CNT];
   struct hisi_sas_sts	*status_buf[QUEUE_CNT];
   struct hisi_sas_cmd	*command_table[QUEUE_CNT];
   struct hisi_sas_iost *iost;

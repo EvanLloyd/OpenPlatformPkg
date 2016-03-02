@@ -60,6 +60,8 @@
 
 #define SENSE_DATA_PRES			26
 
+#define SGE_LIMIT 0x10000
+
 EFI_GUID mSasV1DevicePathGuid = EFI_CALLER_ID_GUID;
 
 // The time between interrupt polls, in units of 100 nanoseconds
@@ -73,7 +75,7 @@ STATIC EFI_STATUS prepare_cmd (
 {
 	struct hisi_sas_slot *slot;
 	struct hisi_sas_cmd_hdr *hdr;
-	struct hisi_sas_sge	*sge;
+	struct hisi_sas_sge_page *sge;
 	struct hisi_sas_sts	*sts;
 	struct hisi_sas_cmd	*cmd;
 	EFI_SCSI_SENSE_DATA *SensePtr = Packet->SenseData;
@@ -144,13 +146,28 @@ STATIC EFI_STATUS prepare_cmd (
 	}
 
 	if (Buffer != NULL) {
-		//only 1 entry
-		sge->addr = (UINT64)Buffer;
-		sge->page_ctrl_0 = sge->page_ctrl_1 = 0;
-		sge->data_len = BufferSize;
-		sge->data_off = 0;
+		struct hisi_sas_sge *sg;
+		UINT32 remain, len, pos = 0;
+		int i = 0;
+
+		remain = len = BufferSize;
+
+		while (remain) {
+			if (len > SGE_LIMIT)
+				len = SGE_LIMIT;
+			sg = &sge->sg[i];
+			sg->addr = (UINT64)(Buffer + pos);
+			sg->page_ctrl_0 = sg->page_ctrl_1 = 0;
+			sg->data_len = len;
+			sg->data_off = 0;
+			remain -= len;
+			pos += len;
+			len = remain;
+			i++;
+		}
+
 		hdr->prd_table_addr = (UINT64)sge;
-		hdr->sg_len = 1 << CMD_HDR_DATA_SGL_LEN_OFF;
+		hdr->sg_len = i << CMD_HDR_DATA_SGL_LEN_OFF;
 	}
 
 	hdr->data_transfer_len = BufferSize;
@@ -476,7 +493,7 @@ STATIC VOID sas_init(SAS_V1_INFO *SasV1Info)
 	  s = sizeof(struct hisi_sas_cmd) * QUEUE_SLOTS;
 	  hba->command_table[i] = UncachedAllocateZeroPool(s);
 
-	  s = sizeof(struct hisi_sas_sge) * QUEUE_SLOTS;
+	  s = sizeof(struct hisi_sas_sge_page) * QUEUE_SLOTS;
 	  hba->sge[i] = UncachedAllocateZeroPool(s);
   }
 
