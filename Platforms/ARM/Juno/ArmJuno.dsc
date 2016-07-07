@@ -122,6 +122,9 @@
   # ARM PrimeCell
   #
 
+  ## HdLcd
+  gArmPlatformTokenSpaceGuid.PcdArmHdLcdBase|0x7FF60000
+
   ## PL011 - Serial Terminal
   gEfiMdeModulePkgTokenSpaceGuid.PcdSerialRegisterBase|0x7FF80000
   gEfiMdePkgTokenSpaceGuid.PcdUartDefaultReceiveFifoDepth|0
