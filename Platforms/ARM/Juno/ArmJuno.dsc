@@ -1,5 +1,5 @@
 #
-#  Copyright (c) 2013-2015, ARM Limited. All rights reserved.
+#  Copyright (c) 2013-2016, ARM Limited. All rights reserved.
 #
 #  This program and the accompanying materials
 #  are licensed and made available under the terms and conditions of the BSD License
@@ -50,6 +50,8 @@
 
   # USB Requirements
   UefiUsbLib|MdePkg/Library/UefiUsbLib/UefiUsbLib.inf
+
+  LcdPlatformLib|ArmPlatformPkg/ArmJunoPkg/Library/HdLcdArmJunoLib/HdLcdArmJunoLib.inf
 
 [LibraryClasses.ARM]
   ArmLib|ArmPkg/Library/ArmLib/ArmV7/ArmV7Lib.inf
