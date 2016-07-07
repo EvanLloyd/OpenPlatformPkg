@@ -311,11 +311,14 @@
   # Juno platform driver
   #
   ArmPlatformPkg/ArmJunoPkg/Drivers/ArmJunoDxe/ArmJunoDxe.inf
+
+!if 0
   SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf {
     <LibraryClasses>
       # DO NOT USE THIS LIBRARY FOR PRODUCTION DEVICES
       RngLib|OpenPlatformPkg/Platforms/ARM/Binary/Library/PseudoRngLib/PseudoRngLib.inf
   }
+!endif
 
   #
   # Bds
@@ -324,3 +327,10 @@
   MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf
   MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf
   IntelFrameworkModulePkg/Universal/BdsDxe/BdsDxe.inf
+
+[Components.AARCH64]
+  SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf {
+    <LibraryClasses>
+      # DO NOT USE THIS LIBRARY FOR PRODUCTION DEVICES
+      RngLib|OpenPlatformPkg/Platforms/ARM/Binary/Library/PseudoRngLib/PseudoRngLib.inf
+  }
