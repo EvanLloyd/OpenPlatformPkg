@@ -1,5 +1,5 @@
 #
-#  Copyright (c) 2011-2015, ARM Limited. All rights reserved.
+#  Copyright (c) 2011-2016, ARM Limited. All rights reserved.
 #
 #  This program and the accompanying materials
 #  are licensed and made available under the terms and conditions of the BSD License
@@ -486,7 +486,9 @@
   #
   # FDT installation
   #
+!if 0
   EmbeddedPkg/Drivers/FdtPlatformDxe/FdtPlatformDxe.inf
+!endif
 
   #
   # UEFI application (Shell Embedded Boot Loader)
