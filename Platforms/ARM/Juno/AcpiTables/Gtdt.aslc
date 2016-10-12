@@ -94,12 +94,13 @@ GENERIC_TIMER_DESCRIPTION_TABLE  Gtdt = {
       FixedPcdGet32 (PcdGenericWatchdogRefreshBase),
       FixedPcdGet32 (PcdGenericWatchdogControlBase),
       93,
-      0),
+      EFI_ACPI_5_1_GTDT_SBSA_GENERIC_WATCHDOG_FLAG_TIMER_INTERRUPT_MODE),
     EFI_ACPI_5_1_SBSA_GENERIC_WATCHDOG_STRUCTURE_INIT (
       FixedPcdGet32 (PcdGenericWatchdogRefreshBase),
       FixedPcdGet32 (PcdGenericWatchdogControlBase),
       94,
-      EFI_ACPI_5_1_GTDT_SBSA_GENERIC_WATCHDOG_FLAG_SECURE_TIMER)
+      (EFI_ACPI_5_1_GTDT_SBSA_GENERIC_WATCHDOG_FLAG_SECURE_TIMER
+       | EFI_ACPI_5_1_GTDT_SBSA_GENERIC_WATCHDOG_FLAG_TIMER_INTERRUPT_MODE))
   }
 #endif
   };
